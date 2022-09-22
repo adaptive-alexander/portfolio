@@ -1,0 +1,15 @@
+[submodule "images/backend"]
+	path = images/backend
+	url = git@github.com:adaptive-alexander/portfolio_back_end.git
+[submodule "images/frontend"]
+	path = images/frontend
+	url = git@github.com:adaptive-alexander/portfolio_front_end.git
+[submodule "images/options"]
+	path = images/options
+	url = git@github.com:adaptive-alexander/options.git
+[submodule "images/options_listener"]
+	path = images/options_listener
+	url = git@github.com:adaptive-alexander/options_listener.git
+[submodule "images/processing_listener"]
+	path = images/processing_listener
+	url = git@github.com:adaptive-alexander/processing_listener.git
