@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  namespace: portfolio
+  labels:
+    app: portfolio
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: portfolio
+  template:
+    metadata:
+      namespace: portfolio
+      labels:
+        app: portfolio
+    spec:
+      containers:
+        - name: nginx
+          image: ghcr.io/adaptive-alexander/portfolio-frontend
+          ports:
+            - containerPort: 3000
+              protocol: TCP
+          readinessProbe:
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 10
+            successThreshold: 2
+            failureThreshold: 10
+            httpGet:
+              scheme: HTTP
+              port: 80
+              path: /

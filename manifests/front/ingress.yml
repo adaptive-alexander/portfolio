@@ -1,0 +1,16 @@
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: portfolio-ingress
+  namespace: portfolio
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: portfolio-ip
+  labels:
+    app: portfolio
+spec:
+  defaultBackend:
+    service:
+      name: portfolio-service
+      port:
+        number: 80
