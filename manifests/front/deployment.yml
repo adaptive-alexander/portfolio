@@ -32,4 +32,3 @@ spec:
               scheme: HTTP
               port: 3000
               path: /
-kubectl exec -n portfolio --stdin --tty nginx-deployment-5fd47fcd9c-tnww9 -- /bin/bash
