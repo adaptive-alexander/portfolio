@@ -7,6 +7,11 @@ metadata:
     app: portfolio-api
 spec:
   replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
   selector:
     matchLabels:
       app: portfolio-api
@@ -18,7 +23,7 @@ spec:
     spec:
       containers:
         - name: portfolio-backend
-          image: ghcr.io/adaptive-alexander/portfolio-backend
+          image: ghcr.io/adaptive-alexander/portfolio-backend:main
           ports:
             - containerPort: 8080
               protocol: TCP

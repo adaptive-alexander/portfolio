@@ -3,14 +3,16 @@ kind: Kustomization
 metadata:
   name: arbitrary
 resources:
-#- issuer.yaml
+- cluster-issuer.yaml
 # Backend
-- back/backend.yaml
-- back/deployment.yaml
-- back/service.yaml
-- back/ingress.yaml
+- back/frontend-config.yml
+- back/backend.yml
+- back/deployment.yml
+- back/service.yml
+- back/ingress.yml
 # Frontend
-- front/backend.yaml
-- front/deployment.yaml
-- front/service.yaml
-- front/ingress.yaml
+- front/frontend-config.yml
+- front/backend.yml
+- front/deployment.yml
+- front/service.yml
+- front/ingress.yml
