@@ -12,4 +12,4 @@ spec:
     healthyThreshold: 2
     unhealthyThreshold: 10
     type: "HTTP"
-    requestPath: /
+    requestPath: /health
