@@ -3,7 +3,7 @@ kind: Kustomization
 metadata:
   name: arbitrary
 resources:
-- cluster-issuer.yaml
+- cluster-issuer.yml
 # Backend
 - back/frontend-config.yml
 - back/backend.yml
