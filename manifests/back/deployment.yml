@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: portfolio-backend
-          image: ghcr.io/adaptive-alexander/portfolio-backend:v0.1.2
+          image: ghcr.io/adaptive-alexander/portfolio-backend:v0.1.5
           ports:
             - containerPort: 8080
               protocol: TCP

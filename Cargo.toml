@@ -1,5 +1,7 @@
 [workspace]
 members = [
     "images/backend",
-    "images/frontend"
+    "images/options",
+    "images/processing_listener",
+    "images/options_listener"
 ]
