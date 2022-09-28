@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: hedge-nordic-scraper
+spec:
+  schedule: "0 6 2,8 * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: hedge-nordic-scraper
+            image: "ADD IMAGE"
+            imagePullPolicy: IfNotPresent
+            command:
+            - /bin/sh
+            - -c
+            - date;
+          restartPolicy: OnFailure
