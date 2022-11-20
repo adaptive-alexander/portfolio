@@ -4,4 +4,4 @@
 /node_modules
 /node_modules/
 
-/configmap.yml
+/manifests/postgres/configmap.yml
