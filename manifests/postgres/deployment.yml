@@ -3,6 +3,11 @@ kind: Deployment # Create a deployment
 metadata:
   name: postgres # Set the name of the deployment
 spec:
+  strategy:
+   rollingUpdate:
+     maxSurge: 1
+     maxUnavailable: 1
+   type: RollingUpdate
   replicas: 1 # Only 1 replica per volume claim (!)
   selector:
     matchLabels:
@@ -15,6 +20,13 @@ spec:
       containers:
         - name: postgres
           image: postgres:12.10 # Docker image
+          resources:
+            limits:
+              cpu: "1"
+              memory: "4Gi"
+            requests:
+              cpu: ".5"
+              memory: "4Gi"
           imagePullPolicy: "IfNotPresent"
           ports:
             - containerPort: 5432 # Exposing the container port 5432 for PostgreSQL client connections.
@@ -27,4 +39,4 @@ spec:
       volumes:
         - name: postgresdata
           persistentVolumeClaim:
-            claimName: postgres-volume-claim
+            claimName: postgresql-pv

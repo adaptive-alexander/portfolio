@@ -1,0 +1,11 @@
+kind: PersistentVolumeClaim  # Create PVC
+apiVersion: v1
+metadata:
+  name: postgresql-pv
+spec:
+  storageClassName: pg-storage-class  # StorageClassName
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 200Gi

@@ -7,6 +7,6 @@ metadata:
   labels:
     app: postgres
 data:
-  POSTGRES_DB: scb
-  POSTGRES_USER: api-scb
+  POSTGRES_DB: api
+  POSTGRES_USER: api-backend
   POSTGRES_PASSWORD: glacial
