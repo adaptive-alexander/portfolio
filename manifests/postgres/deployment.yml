@@ -1,6 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment # Create a deployment
 metadata:
+  namespace: portfolio
   name: postgres # Set the name of the deployment
 spec:
   strategy:
@@ -14,6 +15,7 @@ spec:
       app: postgres
   template:
     metadata:
+      namespace: portfolio
       labels:
         app: postgres
     spec:
@@ -22,11 +24,11 @@ spec:
           image: postgres:12.10 # Docker image
           resources:
             limits:
-              cpu: "1"
-              memory: "4Gi"
-            requests:
               cpu: ".5"
-              memory: "4Gi"
+              memory: "600Mi"
+            requests:
+              cpu: ".250"
+              memory: "600Mi"
           imagePullPolicy: "IfNotPresent"
           ports:
             - containerPort: 5432 # Exposing the container port 5432 for PostgreSQL client connections.

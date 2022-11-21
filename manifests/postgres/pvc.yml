@@ -1,6 +1,7 @@
 kind: PersistentVolumeClaim  # Create PVC
 apiVersion: v1
 metadata:
+  namespace: portfolio
   name: postgresql-pv
 spec:
   storageClassName: pg-storage-class  # StorageClassName
