@@ -13,6 +13,6 @@
 [submodule "images/processing_listener"]
 	path = images/processing_listener
 	url = git@github.com:adaptive-alexander/processing_listener.git
-[submodule ".\\images\\caerostris"]
-	path = .\\images\\caerostris
+[submodule "images/caerostris"]
+	path = images/caerostris
 	url = git@github.com:adaptive-alexander/caerostris.git
