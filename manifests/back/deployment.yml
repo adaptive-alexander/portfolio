@@ -23,10 +23,13 @@ spec:
     spec:
       containers:
         - name: portfolio-backend
-          image: ghcr.io/adaptive-alexander/portfolio-backend:v0.1.13
+          image: ghcr.io/adaptive-alexander/portfolio-backend:v0.1.14
           ports:
             - containerPort: 8080
               protocol: TCP
+          envFrom:
+            - configMapRef:
+                name: postgres-secret
           readinessProbe:
             initialDelaySeconds: 30
             periodSeconds: 10

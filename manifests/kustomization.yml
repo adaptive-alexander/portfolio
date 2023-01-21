@@ -14,3 +14,11 @@ resources:
 - front/deployment.yml
 - front/service.yml
 - front/ingress.yml
+# Postgres
+- postgres/configmap.yml
+- postgres/storageclass.yml
+- postgres/pvc.yml
+- postgres/deployment.yml
+- postgres/service.yml
+# Hedge Nordic Scraper
+- hedge-nordic-scraper/cronjob.yml

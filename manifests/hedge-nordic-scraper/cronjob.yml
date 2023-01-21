@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: hedge-nordic-scraper
+  namespace: portfolio
+spec:
+  schedule: "0 6 2,8 * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          imagePullSecrets:
+            - name: docker-registry
+          containers:
+          - name: hedge-nordic-scraper
+            image: ghcr.io/adaptive-alexander/hedgenordic_perf_scraper:v0.0.8
+            imagePullPolicy: Always
+            envFrom:
+              - configMapRef:
+                  name: postgres-secret # Using the ConfigMap postgres-secret
+          restartPolicy: OnFailure
